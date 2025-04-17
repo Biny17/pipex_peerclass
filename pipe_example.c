@@ -18,7 +18,7 @@ int	main(void)
 	printf("resultat: %d\n", result);
 	printf("fd pour read: %d\n", fds.read_fd);
 	printf("fd pour write: %d\n\n", fds.write_fd);
-
+	
 	write(fds.write_fd, "writing in pipe", 16);
 	int	n_char = read(fds.read_fd, buffer, 16);
 	buffer[n_char] = '\0';
