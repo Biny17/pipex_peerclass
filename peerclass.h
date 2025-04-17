@@ -20,4 +20,6 @@ typedef struct s_fdpipe
 	int	write_fd;
 }	t_fdpipe;
 
+char	*ft_getenv(char *name, char **env);
+
 #endif
