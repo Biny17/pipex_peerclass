@@ -1,6 +1,21 @@
 #include "peerclass.h"
 #include "libft.h"
 
+void	free_split(char **split)
+{
+	int	i;
+
+	i = 0;
+	if (!split)
+		return ;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
 char	*iterpath(char *path_value, char *to_find)
 {
 	const char **paths = (const char **)ft_split(path_value, ':');
@@ -20,7 +35,7 @@ char	*iterpath(char *path_value, char *to_find)
 		i++;
 	}
 	free(to_find);
-	free(paths);
+	free_split(paths);
 	return (result);
 }
 
