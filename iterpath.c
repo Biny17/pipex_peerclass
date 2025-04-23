@@ -35,7 +35,7 @@ char	*iterpath(char *path_value, char *to_find)
 		i++;
 	}
 	free(to_find);
-	free_split(paths);
+	free_split((char **)paths);
 	return (result);
 }
 
